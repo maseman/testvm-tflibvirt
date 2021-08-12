@@ -25,6 +25,7 @@ sudo ${TOOL} \
 	--repositories-file ${CONFD}/repositories \
 	--packages "$(cat ${CONFD}/packages)" \
 	--script-chroot \
+	--serial-console \
 	${TARGET} -- ${CONFD}/configure.sh
 
 CURRENT_USER=$(id --name --user)
