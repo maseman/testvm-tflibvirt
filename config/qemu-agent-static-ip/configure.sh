@@ -6,10 +6,10 @@ cat > /etc/network/interfaces <<-EOF
 		address 192.168.111.111
 EOF
 
-echo 'GA_PATH="/dev/vport0p1"' >> /etc/conf.d/qemu-guest-agent
-
 ln -s networking /etc/init.d/net.lo
 ln -s networking /etc/init.d/net.eth0
+
+/sbin/setup-udev
 
 rc-update add acpid default
 rc-update add crond default
